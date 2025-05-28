@@ -1,0 +1,21 @@
+.rt-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.rt-icon {
+  transition: fill 0.2s ease;
+}
+
+.rt-count {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #00BA7C;
+}
+
+.retweeted .rt-icon {
+  fill: #00BA7C;
+}
