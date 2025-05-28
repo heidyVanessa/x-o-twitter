@@ -1,6 +1,7 @@
 import React from 'react'
 import Like from './componentes/like'
 import Rt from './componentes/rt'
+
 import './App.css'
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
           <input className="tweet-input" placeholder="¿Qué está pasando?" />
           <button className="tweet-post-btn">Postear</button>
         </div>
+        <div>
+          
+        </div>
         <div className="tweet">
           <div className="tweet-header">
             <span className="user-name">Usuario</span>
@@ -45,7 +49,7 @@ function App() {
             <span className="tweet-time">· 1h</span>
           </div>
           <div className="tweet-content">
-            Este es un tweet de ejemplo para tu réplica de X.
+            
           </div>
           <div className="tweet-actions">
             <Like />

@@ -7,7 +7,8 @@ function Like() {
 
   const handleLike = () => {
     setLiked(!liked)
-    setCount(prev => liked ? prev - 1 : prev + 1)
+    setCount(prev => liked 
+      ? prev - 1 : prev + 1)
   }
 
   return (
