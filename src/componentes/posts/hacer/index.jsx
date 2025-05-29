@@ -1,19 +1,27 @@
 import { useState } from 'react';
 
-function TweetBox () {
+function TweetBox({ onTweet }) {
   const [tweet, setTweet] = useState('');
   const [imageUrl, setImageUrl] = useState('');
 
   const handleTweet = () => {
     if (tweet.trim()) {
-      onTweet(tweet, imageUrl);
+      onTweet({
+        user: 'Usuario',
+        handle: '@usuario',
+        timestamp: new Date().toLocaleString(),
+        text: tweet,
+        image: imageUrl,
+        link: '',
+        likes: 0
+      });
       setTweet('');
       setImageUrl('');
     }
   };
 
   return (
-    <div className="tweet-box">
+    <div className="tweet-boxo">
       <div className="tweet-header">
         <span className="user-label">Déjanos un tweet:</span>
         <span className="user-name">Usuario:</span>

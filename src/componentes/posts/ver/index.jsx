@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function PostFeed() {
+function PostFeed({ posts }) {
   return (
     <div className="post-feed">
       {posts.map((post, index) => (
