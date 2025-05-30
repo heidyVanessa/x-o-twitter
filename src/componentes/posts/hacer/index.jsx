@@ -21,28 +21,42 @@ function TweetBox({ onTweet }) {
   };
 
   return (
-    <div className="tweet-boxo">
-      <div className="tweet-header">
-        <span className="user-label">Déjanos un tweet:</span>
-        <span className="user-name">Usuario:</span>
+    <div className="tweet-box">
+      <div className="user-avatar"></div>
+      <div className="tweet-box-content">
+        <textarea
+          className="tweet-input"
+          placeholder="¿Qué está pasando?"
+          value={tweet}
+          onChange={(e) => setTweet(e.target.value)}
+        ></textarea>
+        <div className="tweet-reply-settings">
+          <span className="globe-icon">🌐</span>
+          <span className="reply-label">Everyone can reply</span>
+        </div>
+        <div className="tweet-options">
+          <button className="option-icon">📷</button>
+          <button className="option-icon">🎥</button>
+          <button className="option-icon">📊</button>
+          <button className="option-icon">😊</button>
+          <button className="option-icon">📅</button>
+          <button className="option-icon">📍</button>
+          <input
+            type="text"
+            className="image-url-input"
+            placeholder="Opcional: URL de la imagen/GIF"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+          />
+        </div>
+        <button
+          className="tweet-button"
+          onClick={handleTweet}
+          disabled={!tweet.trim()}
+        >
+          Post
+        </button>
       </div>
-      <textarea
-        placeholder="¿Qué está pasando?"
-        value={tweet}
-        onChange={(e) => setTweet(e.target.value)}
-      ></textarea>
-      <div className="tweet-options">
-        <button>📷</button>
-        <button>🎥</button>
-        <span className="image-url-label">Opcional: URL de la imagen/GIF</span>
-        <input
-          type="text"
-          placeholder="https://example.com/image.jpg"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-        />
-      </div>
-      <button className="tweet-button" onClick={handleTweet}>Tweet</button>
     </div>
   );
 }

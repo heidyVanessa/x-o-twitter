@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // Import useState here
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import Like from './componentes/like';
@@ -10,7 +10,7 @@ import Perfil from './componentes/perfil';
 import './App.css';
 
 function App() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([{ user: 'Test', handle: '@test', timestamp: new Date().toLocaleString(), text: 'Test post', likes: 0 }]);
 
   const handleTweet = (newPost) => {
     setPosts([newPost, ...posts]);
@@ -52,25 +52,9 @@ function App() {
                     <span className="active-tab">Para ti</span>
                     <span>Siguiendo</span>
                   </header>
-                  <div className="tweet-box">
-                    <input className="tweet-input" placeholder="¿Qué está pasando?" />
-                    <button className="tweet-post-btn">Postear</button>
-                  </div>
-                    <TweetBox onTweet={handleTweet} />
+                  <TweetBox onTweet={handleTweet} />
                   <div>
                     <PostFeed posts={posts} />
-                  </div>
-                  <div className="tweet">
-                    <div className="tweet-header">
-                      <span className="user-name">Usuario</span>
-                      <span className="user-handle">@usuario</span>
-                      <span className="tweet-time">· 1h</span>
-                    </div>
-                    <div className="tweet-content"></div>
-                    <div className="tweet-actions">
-                      <Like />
-                      <Rt />
-                    </div>
                   </div>
                 </>
               }

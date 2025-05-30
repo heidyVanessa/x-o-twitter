@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Like from '../../like';
+import Rt from '../../rt';
 
 function PostFeed({ posts }) {
   return (
@@ -14,7 +16,8 @@ function PostFeed({ posts }) {
           {post.image && <img src={post.image} alt="post" />}
           {post.link && <a href={post.link}>Link</a>}
           <div className="post-actions">
-            <span>❤️ {post.likes}</span>
+            <Like />
+            <Rt />
             <span>💬 Reply</span>
             <span>🔗 Copy Link</span>
           </div>
@@ -22,6 +25,8 @@ function PostFeed({ posts }) {
       ))}
     </div>
   );
+  
 }
 
 export default PostFeed;
+
